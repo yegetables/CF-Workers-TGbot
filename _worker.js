@@ -20,7 +20,7 @@ export default {
                 }
             }
 
-            if (userAgent.includes('mozilla') && !url.search) {
+            if (userAgent.includes('mozilla') && !url.search && !url.pathname.startsWith('/bot')) {
                 if (url.pathname === `/${TELEGRAM_TOKEN}`) {
                     const domain = url.host;
                     const result = {};
